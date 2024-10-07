@@ -1,22 +1,20 @@
-
-
+// Import React
 import React from 'react';
-import Item from './Item';
 
-// Define ItemList component
-
-function ItemList({ items, onDelete, onEdit }) {
-
-  // Map items to Item components
- 
+// Define the ItemList component
+const ItemList = ({ songs }) => {
   return (
-    <div>
-    
-      {items.map((item) => (
-        <Item key={item.id} item={item} onDelete={onDelete} onEdit={onEdit} />
+    <ul>
+     
+      {songs.map((song, index) => (
+        <li key={index}>
+          <h2>{song.title}</h2>
+          <p>by {song.artist}</p>
+        </li>
       ))}
-    </div>
+    </ul>
   );
-}
+};
 
+// Export the ItemList component
 export default ItemList;
